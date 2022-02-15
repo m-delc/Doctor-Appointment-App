@@ -5,8 +5,9 @@ import Login from "./Login/Login"
 import Navbar from "./Navbar/Navbar"
 import Home from './Home/Home'
 import About from './About/About'
-// import Profile from './Profile/Profile'
 import Appointments from './Appointments/Appointments'
+import MakeAppointment from './MakeAppointment/MakeAppointment'
+// import Profile from './Profile/Profile'
 
 function App() {
 
@@ -59,6 +60,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/appointments" element={<Appointments user={user} />} />
+            <Route path="/makeappointment" element={<MakeAppointment user={user} />} />
           </Routes>
         </div>
 
