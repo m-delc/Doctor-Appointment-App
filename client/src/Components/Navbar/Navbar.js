@@ -3,11 +3,6 @@ import { React } from 'react'
 import './Navbar.css'
 
 export default function Navbar({ setIsAuthenticated, user, setUser }) {
-
-  // how to set active link in navbar?
-  // how to set active link in navbar?
-  // how to set active link in navbar?
-  // const [activeLink, setActiveLink] = useState()
   const navigate = useNavigate()
 
   

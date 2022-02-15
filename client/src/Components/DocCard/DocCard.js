@@ -10,7 +10,7 @@ function DocCard({doctor, user}) {
     return (
 
         <div className = "card">
-            <p>Name: {doctor.name}</p>
+            <p><b><u>Name:</u></b>  {doctor.name}</p>
             <p>Field: {doctor.field}</p>
             <p>Address: {doctor.address}</p>
             <p>Phone Number: {doctor.number}</p>
