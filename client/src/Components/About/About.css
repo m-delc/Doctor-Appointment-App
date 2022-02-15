@@ -4,3 +4,9 @@
     font-size: 18px;
     margin-top: 50px;
 }
+
+h3 {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
