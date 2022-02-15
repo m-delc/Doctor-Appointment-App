@@ -17,7 +17,7 @@ export default function Login({ setUser, setIsAuthenticated }) {
                     <div className="login-signup-toggle">
                         <p className="login-signup-toggle"> 
                             No Account?
-                            <button onClick={() => setShowLogin(false)}>
+                            <button className="front-page-toggle" onClick={() => setShowLogin(false)}>
                                 Sign up
                             </button>
                         </p>
@@ -29,7 +29,7 @@ export default function Login({ setUser, setIsAuthenticated }) {
                     <div className="login-signup-toggle">
                         <p className="login-signup-toggle">
                             Already have an account?
-                            <button onClick={() => setShowLogin(true)}>
+                            <button className="front-page-toggle" onClick={() => setShowLogin(true)}>
                                 Log In
                             </button>
                         </p>

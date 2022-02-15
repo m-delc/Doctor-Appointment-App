@@ -45,6 +45,10 @@ input[type=text]:focus, input[type=password]:focus {
     outline: none !important;
     border: 1px solid rgba(115, 82, 122, 0.938);
 }
+input[type=text]:hover, input[type=password]:hover {
+    opacity: 0.9;
+    transform: scale(0.98);
+}
 /* for placeholder text in login form */
 ::placeholder {
     color: rgba(115, 82, 122, 0.938);
@@ -117,10 +121,17 @@ button:hover {
     height: 100hv;
 }
 
+/* div containing "No Account? and button" */
 .login-signup-toggle {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     
+}
+
+/* button on front page that toggles signup/login */
+.front-page-toggle {
+    display: flex;
+    font-size: 14px;
 }
