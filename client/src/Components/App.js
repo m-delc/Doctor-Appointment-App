@@ -13,6 +13,8 @@ function App() {
 
     const [isAuthenticated, setIsAuthenticated] = useState(false)
     const [user, setUser] = useState(null)
+    const [doctors, setDoctors] = useState([])
+    const [appointments, setAppointments] = useState([])
     // const [logoutMessage, setLogoutMessage] = useState("")
     // const [loginMessage, setLoginMessage] = useState('')
     
@@ -30,8 +32,27 @@ function App() {
           }
         })
 
-        
+        fetch('/doctors')
+        .then(res => {
+          if (res.ok) {
+            res.json()
+            .then(doctorData => {
+              console.log(doctorData)
+              setDoctors(doctorData)
+            })
+          }
+        })
 
+        fetch('/appointments')
+        .then(res => {
+          if (res.ok) {
+            res.json()
+            .then(appointmentData => {
+              console.log(appointmentData)
+              setAppointments(appointmentData)
+            })
+          }
+        })
       }, [])
 
       console.log(isAuthenticated)
