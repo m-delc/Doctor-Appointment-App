@@ -12,27 +12,19 @@ function App() {
 
     const [isAuthenticated, setIsAuthenticated] = useState(false)
     const [user, setUser] = useState(null)
-
     
     useEffect(() => {
       fetch('/authorized_user')
       .then(res => {
           if (res.ok) {
             res.json()
-            .then(user => {
-              // console.log(user)
-              
+            .then(user => {         
               setIsAuthenticated(true)
               setUser(user)
             })
           }
         })
-      }, [])
-
-      // hey Mahdy from Main
-      // hey Mahdy from Main
-      // hey Mahdy from Main
-      //hey Michael from Mahdy
+    }, [])
 
 
     if (!isAuthenticated) return <Login error={"Please Login"} setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
@@ -43,7 +35,7 @@ function App() {
           <Navbar setUser={setUser} setIsAuthenticated={setIsAuthenticated} user={user} />
           <Routes>
             <Route path="/about" element={<About />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/home" element={<Home user={user} />} />
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/appointments" element={<Appointments user={user} />} />
