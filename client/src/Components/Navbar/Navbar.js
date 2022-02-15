@@ -30,7 +30,7 @@ export default function Navbar({ setIsAuthenticated, user, setUser }) {
         <Link to='/home'>Home</Link>
         <Link to='/about'>About</Link>
         <Link to='/home' onClick={logout}>Logout</Link>
-        <Link to='/appointments'>{user? user.username : null}'s appointments</Link>
+        <Link to='/appointments'>{user? user.first_name : null}'s Appointments</Link>
       </div>
     </header>
   )
