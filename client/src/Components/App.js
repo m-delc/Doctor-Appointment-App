@@ -7,31 +7,38 @@ import Home from './Home/Home'
 import About from './About/About'
 import Appointments from './Appointments/Appointments'
 import MakeAppointment from './MakeAppointment/MakeAppointment'
-// import Profile from './Profile/Profile'
 
 function App() {
 
     const [isAuthenticated, setIsAuthenticated] = useState(false)
     const [user, setUser] = useState(null)
-    // const [logoutMessage, setLogoutMessage] = useState("")
-    // const [loginMessage, setLoginMessage] = useState('')
+    const [doctorList, setDoctorList] = useState([])
     
     useEffect(() => {
       fetch('/authorized_user')
       .then(res => {
           if (res.ok) {
             res.json()
-            .then(user => {
-              // console.log(user)
-              
+            .then(user => {         
               setIsAuthenticated(true)
               setUser(user)
             })
           }
         })
-      }, [])
 
-      console.log(isAuthenticated)
+      fetch('/doctors')
+      .then(res => {
+        if (res.ok) {
+          res.json()
+          .then(docs => {
+            setDoctorList(docs)
+          })
+        }
+      })
+      
+    }, [])
+
+      console.log(doctorList)
 
       
       // Playing around with useEffect, not important
@@ -55,12 +62,11 @@ function App() {
           <Navbar setUser={setUser} setIsAuthenticated={setIsAuthenticated} user={user} />
           <Routes>
             <Route path="/about" element={<About />} />
-            {/* <Route path="/profile" element={<Profile user={user} setUser={setUser} />} /> */}
-            <Route path="/home" element={<Home />} />
+            <Route path="/home" element={<Home user={user} />} />
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/appointments" element={<Appointments user={user} />} />
-            <Route path="/makeappointment" element={<MakeAppointment user={user} />} />
+            <Route path="/makeappointment" element={<MakeAppointment user={user} doctorList={doctorList}/>} />
           </Routes>
         </div>
 
