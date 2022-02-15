@@ -29,6 +29,12 @@ class AppointmentsController < ApplicationController
 
     end
 
+    def destroy
+        appointment = Appointment.find_by(id: params[:id])
+        appointment.destroy
+        render json: {}, status: :no_content
+    end
+
     private 
 
     def appointment_params
