@@ -12,6 +12,12 @@ export default function Profile({ user, setUser }) {
     const [changeUsername, setChangeUsername] = useState('')
     const [profileMessage, setProfileMessage] = useState(null)
 
+
+
+    // this logic is for possible user profile update
+    // this logic is for possible user profile update
+    // this logic is for possible user profile update
+    // this logic is for possible user profile update
     const onSubmit = (e) => {
 
         e.preventDefault()

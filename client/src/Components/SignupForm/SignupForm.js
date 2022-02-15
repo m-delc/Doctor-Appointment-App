@@ -4,19 +4,20 @@ import { useState } from 'react'
 
 export default function SignupForm({ setUser, setIsAuthenticated }) {
 
-    // first name, last name
-    const [signupName, setSignupName] = useState("");
-    const [signupErrors, setSignupErrors] = useState([])
-    const [passwordConfirmation, setPasswordConfirmation] = useState("");
+    const [signupFirstName, setSignupFirstName] = useState("");
+    const [signupLastName, setSignupLastName] = useState("");
     const [signupUsername, setSignupUsername] = useState('')
     const [signupPassword, setSignupPassword] = useState('')
+    const [passwordConfirmation, setPasswordConfirmation] = useState("");
+    const [signupErrors, setSignupErrors] = useState([])
     const navigate = useNavigate()
 
     function signupOnSubmit(e){
         e.preventDefault()
         // setSignupErrors([])
         const user = {
-            name: signupName,
+            first_name: signupFirstName,
+            last_name: signupLastName,
             username: signupUsername,
             password: signupPassword,
             password_confirmation: passwordConfirmation
@@ -31,9 +32,8 @@ export default function SignupForm({ setUser, setIsAuthenticated }) {
                 res.json()
                 .then(user => {
                     setUser(user)
-                    // console.log(user.username)
                     setIsAuthenticated(true)
-                    navigate('/about')
+                    navigate('/home')
 
                 })
             } else {
@@ -51,29 +51,36 @@ export default function SignupForm({ setUser, setIsAuthenticated }) {
                     </div>
                     <input
                         type="text"
-                        id="name"
-                        placeholder="name"
-                        value={signupName}
-                        onChange={(e) => setSignupName(e.target.value)}
+                        id="firstname"
+                        placeholder="First Name"
+                        value={signupFirstName}
+                        onChange={(e) => setSignupFirstName(e.target.value)}
+                        />
+                    <input
+                        type="text"
+                        id="lastname"
+                        placeholder="Last Name"
+                        value={signupLastName}
+                        onChange={(e) => setSignupLastName(e.target.value)}
                         />
                     <input 
                         type="text"
                         id="username"
-                        placeholder="username" 
+                        placeholder="Username" 
                         value={signupUsername}
                         onChange={(e) => setSignupUsername(e.target.value)}
                         />
                     <input 
                         type="password"
                         id="password"
-                        placeholder="password" 
+                        placeholder="Choose a password" 
                         value={signupPassword}
                         onChange={(e) => setSignupPassword(e.target.value)}
                         />
                     <input 
                         type="password"
                         id="password_confirmation"
-                        placeholder="confirm password" 
+                        placeholder="Confirm password" 
                         value={passwordConfirmation}
                         onChange={(e) => setPasswordConfirmation(e.target.value)}
                         />
@@ -82,7 +89,6 @@ export default function SignupForm({ setUser, setIsAuthenticated }) {
                     </button>
                 </div>
             </form>
-            {/* { signupErrors ? signupErrors.map(e => <div key={e}>{e[0]+' : ' + e[1]}</div>) : null} */}
             { signupErrors ? signupErrors.map(e => <div key={e}>{e[1]}</div>) : null}
 
   </div>;
