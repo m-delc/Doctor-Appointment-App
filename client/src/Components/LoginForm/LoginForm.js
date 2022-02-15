@@ -37,7 +37,7 @@ export default function LoginForm({ setUser, setIsAuthenticated }) {
     }
 
 
-  return <div>
+  return <div className="container1">
             <form onSubmit={loginOnSubmit} className="form">
                 <div className="container1">
                     <div className="container4">
@@ -58,7 +58,7 @@ export default function LoginForm({ setUser, setIsAuthenticated }) {
                         name="pwd" 
                         />
                     <div className="container2">
-                        <button className="button1" type="submit">Login</button>
+                        <button type="submit">Login</button>
                     </div>
                 </div>
                 <div className="container3">

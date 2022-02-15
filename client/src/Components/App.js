@@ -8,7 +8,6 @@ import About from './About/About'
 import Appointments from './Appointments/Appointments'
 import MakeAppointment from './MakeAppointment/MakeAppointment'
 
-
 function App() {
 
     const [isAuthenticated, setIsAuthenticated] = useState(false)
@@ -59,8 +58,7 @@ function App() {
           <Navbar setUser={setUser} setIsAuthenticated={setIsAuthenticated} user={user} />
           <Routes>
             <Route path="/about" element={<About />} />
-            {/* <Route path="/profile" element={<Profile user={user} setUser={setUser} />} /> */}
-            <Route path="/home" element={<Home />} />
+            <Route path="/home" element={<Home user={user} />} />
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/appointments" element={<Appointments user={user} />} />
