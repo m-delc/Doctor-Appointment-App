@@ -7,14 +7,12 @@ import Home from './Home/Home'
 import About from './About/About'
 import Appointments from './Appointments/Appointments'
 import MakeAppointment from './MakeAppointment/MakeAppointment'
-// import Profile from './Profile/Profile'
 
 function App() {
 
     const [isAuthenticated, setIsAuthenticated] = useState(false)
     const [user, setUser] = useState(null)
-    // const [logoutMessage, setLogoutMessage] = useState("")
-    // const [loginMessage, setLoginMessage] = useState('')
+
     
     useEffect(() => {
       fetch('/authorized_user')
@@ -31,21 +29,6 @@ function App() {
         })
       }, [])
 
-      console.log(isAuthenticated)
-
-      
-      // Playing around with useEffect, not important
-      // Playing around with useEffect, not important
-      // Playing around with useEffect, not important
-      useEffect(() => {
-        return user ? console.log(`Current user is ${user.username}`) : null
-      }, [user])
-      
-      useEffect(() => {
-        return !user ? console.log(`No user is currently logged in`) : null
-      }, [user])
-
-
 
     if (!isAuthenticated) return <Login error={"Please Login"} setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
 
@@ -55,7 +38,6 @@ function App() {
           <Navbar setUser={setUser} setIsAuthenticated={setIsAuthenticated} user={user} />
           <Routes>
             <Route path="/about" element={<About />} />
-            {/* <Route path="/profile" element={<Profile user={user} setUser={setUser} />} /> */}
             <Route path="/home" element={<Home />} />
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
