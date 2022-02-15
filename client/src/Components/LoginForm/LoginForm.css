@@ -26,6 +26,7 @@ body {
     align-items: center;
     text-align: center;
     font-size: 24px;
+    margin-bottom: 30px;
 }
 /* form inputs */
 input[type=text], input[type=password] {
@@ -61,19 +62,20 @@ button {
     background-color: rgb(51, 47, 50);
     color: rgba(115, 82, 122, 1);
     /* height of button/width of button */
-    padding: 10px 30px;
+    padding: 15px 35px;
     /* spacing from "password"/spacing between buttons */
     margin: 20px 20px;
     border: none;
     cursor: pointer;
     width: 25%;
-    font-size: 14px;
+    font-size: 16px;
+    /* for rounded corners on buttons */
+    border-radius: 12px;
 }
-/* for rounded corners on buttons */
-button {border-radius: 12px;}
-/* Add a hover effect for buttons */
+
 button:hover {
-    opacity: 0.7;
+    opacity: 0.9;
+    transform: scale(0.98);
 }
 
 /* for login inputs */
@@ -113,4 +115,12 @@ button:hover {
     margin: 0;
     justify-content: center;
     height: 100hv;
+}
+
+.login-signup-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
 }
