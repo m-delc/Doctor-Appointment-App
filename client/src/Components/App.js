@@ -7,7 +7,7 @@ import Home from './Home/Home'
 import About from './About/About'
 import Appointments from './Appointments/Appointments'
 import MakeAppointment from './MakeAppointment/MakeAppointment'
-// import Profile from './Profile/Profile'
+
 
 function App() {
 
@@ -15,17 +15,13 @@ function App() {
     const [user, setUser] = useState(null)
     const [doctors, setDoctors] = useState([])
     const [appointments, setAppointments] = useState([])
-    // const [logoutMessage, setLogoutMessage] = useState("")
-    // const [loginMessage, setLoginMessage] = useState('')
-    
+
     useEffect(() => {
       fetch('/authorized_user')
       .then(res => {
           if (res.ok) {
             res.json()
             .then(user => {
-              // console.log(user)
-              
               setIsAuthenticated(true)
               setUser(user)
             })
@@ -54,22 +50,6 @@ function App() {
           }
         })
       }, [])
-
-      console.log(isAuthenticated)
-
-      
-      // Playing around with useEffect, not important
-      // Playing around with useEffect, not important
-      // Playing around with useEffect, not important
-      useEffect(() => {
-        return user ? console.log(`Current user is ${user.username}`) : null
-      }, [user])
-      
-      useEffect(() => {
-        return !user ? console.log(`No user is currently logged in`) : null
-      }, [user])
-
-
 
     if (!isAuthenticated) return <Login error={"Please Login"} setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
 
