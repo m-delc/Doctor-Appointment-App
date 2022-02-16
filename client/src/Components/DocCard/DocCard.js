@@ -34,14 +34,14 @@ function DocCard({doctor, user, appointments, setAppointments}) {
             })
         } else {
             res.json()
-            .then(json => setPostErrors(Object.entries(json.error))
+            .then(json => setPostErrors(Object.entries(json.errors))
             )}
     })
  }
 
 
     return (
-
+        <div className="apt-div">
         <li className = "card">
             <p><b><u>Name:</u></b>  {doctor.name}</p>
             <p><b><u>Field:</u></b>  {doctor.field}</p>
@@ -57,7 +57,7 @@ function DocCard({doctor, user, appointments, setAppointments}) {
                 ) : (
                     <div>
                         <form onSubmit = {makeAppointment} className = "apt-form">
-                        <div className = "apt-in">
+                        <div>
                         <input
                         type="date"
                         id="date"
@@ -88,6 +88,7 @@ function DocCard({doctor, user, appointments, setAppointments}) {
             }
             { postErrors ? postErrors.map(e => <div key={e}>{e[1]}</div>) : null}
         </li>
+    </div>
     )
 }
 

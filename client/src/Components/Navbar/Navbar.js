@@ -12,9 +12,8 @@ export default function Navbar({ setIsAuthenticated, user, setUser }) {
       method: "DELETE"
     })
     .then(() =>{
-      setIsAuthenticated(false);
       setUser(null)
-      // setLogoutMessage("You are logged out")
+      setIsAuthenticated(false);
       navigate('./home')
     })
   }
