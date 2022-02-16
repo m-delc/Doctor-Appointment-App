@@ -4,7 +4,7 @@ require 'faker'
 fields = ["Allergy and Immunology", "Anesthesiology", "Dermatology", "Diagnostic Radiology", "Emergency Medicine", "Family Medicine", "Internal Medicine", "Medical Genetics", "Neurology", "Nuclear Medicine", "Obstetrics and Gynecology","Ophthalmology","Pathology","Pediatrics","Physical Medicine and Rehabilitation","Preventive Medicine","Psychiatry","Radiation Oncology","Surgery","Urology"]
 
 
-30.times do
+100.times do
     Doctor.create!(
       name: Faker::Name.name,
       field: fields.sample,

@@ -3,11 +3,6 @@ import { React } from 'react'
 import './Navbar.css'
 
 export default function Navbar({ setIsAuthenticated, user, setUser }) {
-
-  // how to set active link in navbar?
-  // how to set active link in navbar?
-  // how to set active link in navbar?
-  // const [activeLink, setActiveLink] = useState()
   const navigate = useNavigate()
 
   
@@ -30,8 +25,8 @@ export default function Navbar({ setIsAuthenticated, user, setUser }) {
         <Link to='/home'>Home</Link>
         <Link to='/about'>About</Link>
         <Link to='/makeappointment'>Make Appointment</Link>
-        <Link to='/home' onClick={logout}>Logout</Link>
         <Link to='/appointments'>{user? user.first_name : null}'s Appointments</Link>
+        <Link to='/home' onClick={logout}>Logout</Link>
       </div>
     </header>
   )

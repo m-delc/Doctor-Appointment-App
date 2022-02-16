@@ -12,20 +12,43 @@ function App() {
 
     const [isAuthenticated, setIsAuthenticated] = useState(false)
     const [user, setUser] = useState(null)
-    
+    const [doctors, setDoctors] = useState([])
+    const [appointments, setAppointments] = useState([])
+
     useEffect(() => {
       fetch('/authorized_user')
       .then(res => {
           if (res.ok) {
             res.json()
-            .then(user => {         
+            .then(user => {
               setIsAuthenticated(true)
               setUser(user)
             })
           }
         })
-    }, [])
 
+        fetch('/doctors')
+        .then(res => {
+          if (res.ok) {
+            res.json()
+            .then(doctorData => {
+              console.log(doctorData)
+              setDoctors(doctorData)
+            })
+          }
+        })
+
+        fetch('/appointments')
+        .then(res => {
+          if (res.ok) {
+            res.json()
+            .then(appointmentData => {
+              console.log(appointmentData)
+              setAppointments(appointmentData)
+            })
+          }
+        })
+      }, [])
 
     if (!isAuthenticated) return <Login error={"Please Login"} setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
 
@@ -38,8 +61,8 @@ function App() {
             <Route path="/home" element={<Home user={user} />} />
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/appointments" element={<Appointments user={user} />} />
-            <Route path="/makeappointment" element={<MakeAppointment user={user} />} />
+            <Route path="/appointments" element={<Appointments user={user} appointments = {appointments} setAppointments = {setAppointments} />} />
+            <Route path="/makeappointment" element={<MakeAppointment user={user} doctors={doctors} appointments = {appointments} setAppointments= {setAppointments} />} />
           </Routes>
         </div>
 
