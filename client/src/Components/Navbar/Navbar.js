@@ -1,9 +1,8 @@
-import { useNavigate, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { React } from 'react'
 import './Navbar.css'
 
 export default function Navbar({ setIsAuthenticated, user, setUser }) {
-  const navigate = useNavigate()
 
   
 
@@ -14,7 +13,6 @@ export default function Navbar({ setIsAuthenticated, user, setUser }) {
     .then(() =>{
       setUser(null)
       setIsAuthenticated(false);
-      // navigate('./home')
     })
   }
 
@@ -22,7 +20,6 @@ export default function Navbar({ setIsAuthenticated, user, setUser }) {
     <header>
       <div className="topnav">
         <nav>
-
         <NavLink to='/home'>Home</NavLink>
         <NavLink to='/about'>About</NavLink>
         <NavLink to='/makeappointment'>Make Appointment</NavLink>
