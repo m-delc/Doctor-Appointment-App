@@ -48,7 +48,7 @@ function App() {
             })
           }
         })
-      }, [])
+      }, [isAuthenticated])
 
     if (!isAuthenticated) return <Login error={"Please Login"} setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
 
