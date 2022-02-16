@@ -13,5 +13,28 @@
           1px -1px 0 #000,
           -1px 1px 0 #000,
           1px 1px 0 #000;
+  }
+
+  .card li {
     flex-direction: column;
+  }
+
+  .card button{
+    margin : auto;
+    background-color: rgba(28, 9, 32, 0.288);
+    color:white;
+    text-shadow:
+          -1px -1px 0 #000,
+          1px -1px 0 #000,
+          -1px 1px 0 #000,
+          1px 1px 0 #000;
+          border-style:groove;
+          border-color: white;
+  }
+  .apt-in {
+  }
+
+  .apt-form button {
+      margin-top: 25px;
+      
   }

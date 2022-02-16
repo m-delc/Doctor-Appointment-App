@@ -3,7 +3,7 @@ import './MakeAppointment.css'
 import Filter from '../Filter/Filter'
 import DocCard from '../DocCard/DocCard'
 
-function MakeAppointment({user, doctors}) {
+function MakeAppointment({user, doctors, appointments, setAppointments}) {
   
 const [docField, setDocField] = useState("All")
 
@@ -29,7 +29,7 @@ return (
 
     <ul className="cards">
       {doctorList.map((doctor) => (
-        <DocCard key={doctor.id} doctor = {doctor} user ={user} />
+        <DocCard key={doctor.id} doctor = {doctor} user ={user} appointments={appointments} setAppointments = {setAppointments} />
       ))}
     </ul>
   

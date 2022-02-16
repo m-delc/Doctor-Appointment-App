@@ -61,8 +61,8 @@ function App() {
             <Route path="/home" element={<Home user={user} />} />
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/appointments" element={<Appointments user={user} />} />
-            <Route path="/makeappointment" element={<MakeAppointment user={user} doctors={doctors}/>} />
+            <Route path="/appointments" element={<Appointments user={user} appointments = {appointments} setAppointments = {setAppointments} />} />
+            <Route path="/makeappointment" element={<MakeAppointment user={user} doctors={doctors} appointments = {appointments} setAppointments= {setAppointments} />} />
           </Routes>
         </div>
 
