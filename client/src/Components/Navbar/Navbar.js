@@ -1,4 +1,4 @@
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import { React } from 'react'
 import './Navbar.css'
 
@@ -14,18 +14,21 @@ export default function Navbar({ setIsAuthenticated, user, setUser }) {
     .then(() =>{
       setUser(null)
       setIsAuthenticated(false);
-      navigate('./home')
+      // navigate('./home')
     })
   }
 
   return (
     <header>
       <div className="topnav">
-        <Link to='/home'>Home</Link>
-        <Link to='/about'>About</Link>
-        <Link to='/makeappointment'>Make Appointment</Link>
-        <Link to='/appointments'>{user? user.first_name : null}'s Appointments</Link>
-        <Link to='/home' onClick={logout}>Logout</Link>
+        <nav>
+
+        <NavLink to='/home'>Home</NavLink>
+        <NavLink to='/about'>About</NavLink>
+        <NavLink to='/makeappointment'>Make Appointment</NavLink>
+        <NavLink to='/appointments'>{user? user.first_name : null}'s Appointments</NavLink>
+        <NavLink to='/' onClick={logout}>Logout</NavLink>
+        </nav>
       </div>
     </header>
   )

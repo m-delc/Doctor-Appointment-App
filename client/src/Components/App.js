@@ -32,7 +32,6 @@ function App() {
           if (res.ok) {
             res.json()
             .then(doctorData => {
-              console.log(doctorData)
               setDoctors(doctorData)
             })
           }
@@ -43,7 +42,6 @@ function App() {
           if (res.ok) {
             res.json()
             .then(appointmentData => {
-              console.log(appointmentData)
               setAppointments(appointmentData)
             })
           }

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import "./AptCard.css"
 
-function AptCard({user, appointment, setAppointments, appointments}) {
+function AptCard({ appointment, setAppointments, appointments}) {
     const [showForm, setShowForm] = useState(true)
     const [time, setTime] = useState("")
     const [date, setDate] = useState("")
@@ -81,43 +81,36 @@ function AptCard({user, appointment, setAppointments, appointments}) {
                 ) : (
                     <div>
                         <form onSubmit={updateAppointment} className = "apt-form">
-                        <div>
-                        <input
-                        type="date"
-                        id="date"
-                        placeholder="Select Date"
-                        value={date}
-                        onChange={(e) => setDate(e.target.value)}
-                        />
-                    <input
-                        type="time"
-                        min = "08:00"
-                        max = "18:00"
-                        step = "1800"
-                        value={time}
-                        onChange={(e) => setTime(e.target.value)}
-                        />
-                    </div>
-
-                    <button 
-                        type="submit"> Confirm Updated Details
-                    </button>
-
+                            <div>
+                                <input
+                                    type="date"
+                                    id="date"
+                                    placeholder="Select Date"
+                                    value={date}
+                                    onChange={(e) => setDate(e.target.value)}
+                                    />
+                                <input
+                                    type="time"
+                                    min = "08:00"
+                                    max = "18:00"
+                                    step = "1800"
+                                    value={time}
+                                    onChange={(e) => setTime(e.target.value)}
+                                    />
+                            </div>
+                            <button 
+                                type="submit"> Confirm Updated Details
+                            </button>
                         </form>
                         <button onClick={deleteAppointment}>Cancel Appointment</button>
-
                         <button onClick ={handleClick}>Go Back</button>
-
                     </div>
                 )
             }
             { updateErrors ? updateErrors.map(e => <div key={e}>{e[1]}</div>) : null}
         </li>
-    </div>
+        </div>
     )
 }
-
-
-
 
 export default AptCard
