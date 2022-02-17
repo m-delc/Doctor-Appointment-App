@@ -1,15 +1,17 @@
 import React, {useState} from "react";
 import "./AptCard.css"
 
-function AptCard({ appointment, setAppointments, appointments}) {
+function AptCard({ appointment, setAppointments, appointments, user}) {
     const [showForm, setShowForm] = useState(true)
     const [time, setTime] = useState("")
     const [date, setDate] = useState("")
-    const [updateErrors, setUpdateErrors] =useState([])
+    const [updateErrors, setUpdateErrors] = useState([])
+    const [count, setCount] = useState(0)
 
     function handleClick() {
         setShowForm(!showForm)
         setUpdateErrors([])
+        setCount(0)
      }
 
      function updateAppointment(e){
@@ -40,6 +42,9 @@ function AptCard({ appointment, setAppointments, appointments}) {
                     setAppointments(updatedAppointmentList)
                     setTime("")
                     setDate("")
+                    setCount(0)
+                    setUpdateErrors([])
+                    alert(`Your appointment with Dr. ${appointment.doctor.name} has been rescheduled to ${updatedAppointment.time} on ${updatedAppointment.date}`)
                 })
             } else {
                 res.json()
@@ -49,15 +54,27 @@ function AptCard({ appointment, setAppointments, appointments}) {
      }
 
      function deleteAppointment() {
+
+        if(count < 1){
+            setCount(count + 1)
+            alert(`${user.first_name}, you are about to cancel your appointment with Dr. ${appointment.doctor.name}, if this is your intention, please click the cancel button once more.`)
+        }
+
+        else {
+            fetch(`/appointments/${appointment.id}`, {
+                method: "DELETE"
+            })
+            .then(res => res)
+            .then(() => {
+                const updatedAppointmentList = appointments.filter((apt) => {return apt.id !== appointment.id})
+                setAppointments(updatedAppointmentList)
+                setCount(0)
+                alert(`${user.first_name}, you have successfully cancelled your appointment with Dr. ${appointment.doctor.name} for ${appointment.time} on ${appointment.date}`)
+
+
+            })
+        }
          
-        fetch(`/appointments/${appointment.id}`, {
-            method: "DELETE"
-        })
-        .then(res => res)
-        .then(() => {
-            const updatedAppointmentList = appointments.filter((apt) => {return apt.id !== appointment.id})
-            setAppointments(updatedAppointmentList)
-        })
      }
 
 
