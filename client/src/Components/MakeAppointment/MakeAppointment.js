@@ -19,7 +19,6 @@ const doctorList = doctors.filter((doctor) => {
   return doctor.field === docField
 })
 
-console.log(doctorList)
 
 return (
   <div className = "appt-cont">

@@ -9,6 +9,7 @@ function DocCard({doctor, user, appointments, setAppointments}) {
 
  function handleClick() {
     setShowForm(!showForm)
+    setPostErrors([])
  }
 
  function makeAppointment(e) {
@@ -28,9 +29,12 @@ function DocCard({doctor, user, appointments, setAppointments}) {
         if(res.ok) {
             res.json()
             .then((appointment) => {
-                console.log(appointment)
-                console.log(appointments)
                 setAppointments([appointment, ...appointments])
+                setTime("")
+                setDate("")
+                setShowForm(!showForm)
+                setPostErrors([])
+                alert(`You're all set ${user.first_name}! You have been booked with Dr. ${doctor.name} for ${appointment.time} on ${appointment.date}. Please bring all relevant documentation to your appointment and you can either edit your appointment information or cancel your appointment in your appointments tab. `)
             })
         } else {
             res.json()
