@@ -2,7 +2,6 @@ import React from 'react'
 import './Home.css'
 
 export default function Home({ user }) {
-  console.log(user)
   
   return (
     <>
