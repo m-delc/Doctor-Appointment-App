@@ -17,9 +17,11 @@ export default function Navbar({ setIsAuthenticated, user, setUser }) {
   }
 
   return (
-    <header>
-      <div className="topnav">
-        <nav>
+    
+    <header className="topnav">
+      <div className="navbar-div">
+      
+        <nav className="navlinks">
         <NavLink to='/home'>Home</NavLink>
         <NavLink to='/about'>About</NavLink>
         <NavLink to='/makeappointment'>Make Appointment</NavLink>
@@ -27,6 +29,7 @@ export default function Navbar({ setIsAuthenticated, user, setUser }) {
         <NavLink to='/' onClick={logout}>Logout</NavLink>
         </nav>
       </div>
+     
     </header>
   )
 }

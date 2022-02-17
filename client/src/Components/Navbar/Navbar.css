@@ -5,13 +5,19 @@
     overflow: hidden;
     position: center;
     top: 0px;
-    display: flex;
+    display: inline-block;
     justify-content: space-between;
-    border-radius: 12px;
     border-radius: 0px 0px 12px 12px;
-    /* width: 550px; */
-
+    text-align: center
 }
+
+.navbar-div {
+    text-align: center
+}
+
+/* .navlinks {
+    display: inline-block;
+} */
 
 /* Style the links inside the navigation bar */
 .topnav a {

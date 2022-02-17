@@ -11,7 +11,10 @@ export default function Home({ user }) {
   return (
     <>
       <h3>Hello {user ? user.first_name : null}! Welcome to Pickadoc</h3>
-      <Slideshow slides={SlideData} />
+      <div>
+        <Slideshow slides={SlideData} />
+      </div>
+      
     <div className="div6">Find the doctor who's right for you, when and where you need it. The best doctors in your area are included here.</div>
     </>
   )

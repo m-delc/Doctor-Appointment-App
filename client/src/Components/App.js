@@ -52,9 +52,10 @@ function App() {
     if (!isAuthenticated) return <Login error={"Please Login"} setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
 
     return (
-      
-        <div className="container">
+
+      <>
           <Navbar setUser={setUser} setIsAuthenticated={setIsAuthenticated} user={user} />      
+        <div className="container">
           <Routes>
             <Route path="/about" element={<About />} />
             <Route path="/home" element={<Home user={user} />} />
@@ -64,7 +65,7 @@ function App() {
             <Route path="/makeappointment" element={<MakeAppointment user={user} doctors={doctors} appointments = {appointments} setAppointments= {setAppointments} />} />
           </Routes>
         </div>
-
+      </>
       );
 }
 
