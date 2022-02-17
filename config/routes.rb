@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  namespace :api do
+  # namespace :api do
     resources :appointments, only: [:index, :create, :update, :destroy]
     resources :doctors, only: [:index]
     
@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     post '/login', to: "sessions#login"
     get '/authorized_user', to: "users#show"
     delete '/logout', to: "sessions#logout"
-  end
+  # end
   
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
   
