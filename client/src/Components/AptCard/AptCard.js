@@ -44,6 +44,7 @@ function AptCard({ appointment, setAppointments, appointments, user}) {
                     setDate("")
                     setCount(0)
                     setUpdateErrors([])
+                    setShowForm(!showForm)
                     alert(`Your appointment with Dr. ${appointment.doctor.name} has been rescheduled to ${updatedAppointment.time} on ${updatedAppointment.date}`)
                 })
             } else {
@@ -70,8 +71,6 @@ function AptCard({ appointment, setAppointments, appointments, user}) {
                 setAppointments(updatedAppointmentList)
                 setCount(0)
                 alert(`${user.first_name}, you have successfully cancelled your appointment with Dr. ${appointment.doctor.name} for ${appointment.time} on ${appointment.date}`)
-
-
             })
         }
          

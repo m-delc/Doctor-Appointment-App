@@ -32,6 +32,8 @@ function DocCard({doctor, user, appointments, setAppointments}) {
                 setAppointments([appointment, ...appointments])
                 setTime("")
                 setDate("")
+                setShowForm(!showForm)
+                setPostErrors([])
                 alert(`You're all set ${user.first_name}! You have been booked with Dr. ${doctor.name} for ${appointment.time} on ${appointment.date}. Please bring all relevant documentation to your appointment and you can either edit your appointment information or cancel your appointment in your appointments tab. `)
             })
         } else {
