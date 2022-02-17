@@ -12,8 +12,8 @@ function Filter({docField, handleField}) {
           onChange={(e) => handleField(e.target.value)}
           >
             <option value="All">Filter By Field</option>
-            {fields.map((field) => (
-                <option value= {field}>{field}</option>
+            {fields.map((field, index) => (
+                <option key={index} value= {field}>{field}</option>
             ))}
           </select>
         </div>
