@@ -54,7 +54,10 @@ function App() {
     return (
 
       <>
+        <div className="navbar">
           <Navbar setUser={setUser} setIsAuthenticated={setIsAuthenticated} user={user} />      
+
+        </div>
         <div className="container">
           <Routes>
             <Route path="/about" element={<About />} />

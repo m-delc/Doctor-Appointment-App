@@ -5,15 +5,16 @@
     overflow: hidden;
     position: center;
     top: 0px;
+    /* inline-block shrinks the navbar in the correct way */
     display: inline-block;
     justify-content: space-between;
     border-radius: 0px 0px 12px 12px;
     text-align: center
 }
 
-.navbar-div {
+/* .navbar-div {
     text-align: center
-}
+} */
 
 /* .navlinks {
     display: inline-block;
