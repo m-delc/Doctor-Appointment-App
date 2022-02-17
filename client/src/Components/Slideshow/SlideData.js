@@ -7,5 +7,11 @@ export const SlideData = [
     },
     {
         image: '/images/pic3.jpg'
+    },
+    {
+        image: '/images/pic4.jpg'
+    },
+    {
+        image: '/images/pic5.jpg'
     }
 ]
