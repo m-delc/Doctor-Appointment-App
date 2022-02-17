@@ -8,6 +8,7 @@ import About from './About/About'
 import Appointments from './Appointments/Appointments'
 import MakeAppointment from './MakeAppointment/MakeAppointment'
 
+
 function App() {
 
     const [isAuthenticated, setIsAuthenticated] = useState(false)
@@ -53,7 +54,7 @@ function App() {
     return (
       
         <div className="container">
-          <Navbar setUser={setUser} setIsAuthenticated={setIsAuthenticated} user={user} />
+          <Navbar setUser={setUser} setIsAuthenticated={setIsAuthenticated} user={user} />      
           <Routes>
             <Route path="/about" element={<About />} />
             <Route path="/home" element={<Home user={user} />} />
