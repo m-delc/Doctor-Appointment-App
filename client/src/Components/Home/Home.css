@@ -10,7 +10,7 @@
     margin-right: -50%;
     transform: translate(-50%, -50%);
     margin: 0;
-    font-size: 18px;
+    font-size:34px;
 }
 
 h3 {
@@ -21,4 +21,9 @@ h3 {
 
 div.id {
     text-align: center;
+}
+
+.welcome {
+font-size:34px;
+
 }
