@@ -38,10 +38,11 @@ export default function LoginForm({ setUser, setIsAuthenticated }) {
 
 
   return <div className="container1">
+            {/* <h2 className="h2">Pickadoc</h2> */}
             <form onSubmit={loginOnSubmit} className="form">
                 <div className="container1">
                     <div className="container4">
-                        <h3 className="login-h3">Login</h3>
+                        <h1 className="login-h3">Pickadoc</h1>
                     </div>
                     <input 
                         type="text"
