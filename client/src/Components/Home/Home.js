@@ -9,7 +9,7 @@ export default function Home({ user }) {
   
   return (
     <>
-      <h3>Hello {user ? user.first_name : null}! Welcome to Pickadoc</h3>
+      <h3 className="welcome">Hello {user ? user.first_name : null}! Welcome to Pickadoc</h3>
     <br />
     <br />
     <br />
@@ -25,7 +25,7 @@ export default function Home({ user }) {
     <br />
     <br />
     <br />
-    <div className="div6">Find the doctor who's right for you, when and where you need it. The best doctors in your area are included here.</div>
+    <div className="div6">Trust us to find the doctor who's right for you.</div>
 
     </>
   )
