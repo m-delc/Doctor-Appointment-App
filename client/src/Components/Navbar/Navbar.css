@@ -1,7 +1,7 @@
 
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: rgba(115, 82, 122, 0.466);
+    background-color: rgba(125, 63, 184, 0.5);
     overflow: hidden;
     position: center;
     top: 0px;
@@ -11,14 +11,6 @@
     border-radius: 0px 0px 12px 12px;
     text-align: center
 }
-
-/* .navbar-div {
-    text-align: center
-} */
-
-/* .navlinks {
-    display: inline-block;
-} */
 
 /* Style the links inside the navigation bar */
 .topnav a {

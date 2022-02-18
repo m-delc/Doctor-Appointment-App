@@ -23,7 +23,6 @@ export default function Navbar({ setIsAuthenticated, user, setUser }) {
       
         <nav className="navlinks">
         <NavLink to='/home'>Home</NavLink>
-        <NavLink to='/about'>About</NavLink>
         <NavLink to='/makeappointment'>Make Appointment</NavLink>
         <NavLink to='/appointments'>{user? user.first_name : null}'s Appointments</NavLink>
         <NavLink to='/' onClick={logout}>Logout</NavLink>

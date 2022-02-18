@@ -4,7 +4,6 @@ import { Routes, Route } from "react-router-dom";
 import Login from "./Login/Login"
 import Navbar from "./Navbar/Navbar"
 import Home from './Home/Home'
-import About from './About/About'
 import Appointments from './Appointments/Appointments'
 import MakeAppointment from './MakeAppointment/MakeAppointment'
 
@@ -56,13 +55,11 @@ function App() {
       <>
         <div className="navbar">
           <Navbar setUser={setUser} setIsAuthenticated={setIsAuthenticated} user={user} />      
-
         </div>
         <div className="container">
           <Routes>
-            <Route path="/about" element={<About />} />
-            <Route path="/home" element={<Home user={user} />} />
             <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home user={user} />} />
             <Route path="/login" element={<Login />} />
             <Route path="/appointments" element={<Appointments user={user} appointments = {appointments} setAppointments = {setAppointments} />} />
             <Route path="/makeappointment" element={<MakeAppointment user={user} doctors={doctors} appointments = {appointments} setAppointments= {setAppointments} />} />
