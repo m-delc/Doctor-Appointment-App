@@ -4,6 +4,7 @@ import './Navbar.css'
 
 export default function Navbar({ setIsAuthenticated, user, setUser }) {
 
+
   
 
   const logout = () => {
