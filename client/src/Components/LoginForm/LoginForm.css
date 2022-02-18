@@ -23,7 +23,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 24px;
+    /* font-size: 24px; */
     margin-bottom: 30px;
 }
 /* form inputs */
@@ -89,6 +89,7 @@ button:hover {
     height: 100hv;
     margin: 0;
     width: 100%;
+    /* margin-top: 200px; */
 }
 /* div for login/forgot buttons */
 .container2 {
@@ -132,4 +133,9 @@ button:hover {
 button.front-page-toggle {
     display: flex;
     font-size: 14px;
+}
+
+.h2 {
+    display: flex;
+    /* margin-top: 100px; */
 }

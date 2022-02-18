@@ -47,7 +47,7 @@ export default function SignupForm({ setUser, setIsAuthenticated }) {
                 <form onSubmit={signupOnSubmit} className="form">
                 <div className="container1">
                     <div className="container4">
-                        <h3 className="login-h3">Signup</h3>
+                        <h1 className="login-h3">Signup</h1>
                     </div>
                     <input
                         type="text"
