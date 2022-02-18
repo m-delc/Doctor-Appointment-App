@@ -6,16 +6,24 @@
     border: none;
     top: 50%;
     left: 50%;
-    position: absolute;
+    position: relative;
     margin-right: -50%;
     transform: translate(-50%, -50%);
     margin: 0;
-    font-size: 18px;
+    font-size:34px;
 }
 
 h3 {
     display: flex;
     justify-content: center;
     margin-top: 50px;
+}
+
+div.id {
+    text-align: center;
+}
+
+.welcome {
+font-size:34px;
 
 }
